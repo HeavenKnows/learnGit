@@ -14,3 +14,6 @@
 
 5. 查看本文件和仓库版本的区别
    git diff
+
+6. 查看git日志（commit 信息）
+   git log
