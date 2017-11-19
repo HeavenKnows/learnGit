@@ -40,3 +40,39 @@
 
 10. 撤销工作区的修改
     git checkout -- <file>
+
+    命令git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+    一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+    一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+总之，就是让这个文件回到最近一次git commit或git add时的状态。
+
+    -- 是必须加的，否则就变成了切换分支
+
+11. 撤销添加到暂存区的修改
+    git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区
+
+12. 删除文件
+    git rm <file>
+    一般会直接从工作区删除文件；这时git status会显示delete；使用git rm并git commit从版本库中删除该文件
+
+    如果在commit之后不小心删除了工作区的文件，可以用git checkout -- <file>找回文件
+    git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
+    记得只是版本库里的最新版本，提交之后修改的内容是找不回来的。
+
+
+13. git push origin master
+
+14. git clone 用户名@ip：目录
+
+15. 创建并切换分支
+    git checkout -b <name>	=	git branch <name>
+    		    			git checkout <name>
+
+16. 查看当前分支
+    git branch
+
+17. 合并分支
+    git merge
